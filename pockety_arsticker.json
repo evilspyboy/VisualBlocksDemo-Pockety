@@ -1,0 +1,142 @@
+{
+  "project": {
+    "id": "03manl",
+    "name": "Pockety-ARSticker",
+    "creationTs": 1715245513437,
+    "lastModifiedTs": 1715246897486,
+    "userSetData": {
+      "description": "",
+      "tags": [],
+      "contactURL": "",
+      "tutorialYouTube": ""
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "live_camera_hm8h6r",
+        "nodeSpecId": "live_camera",
+        "customData": {
+          "runContinuously": true,
+          "initialWidth": 240,
+          "initialHeight": 320,
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 240,
+          "previewHeight": 320
+        },
+        "uiData": {
+          "posX": 0,
+          "posY": 216.75,
+          "width": 176,
+          "height": 105,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": true
+        }
+      },
+      {
+        "id": "input_image_6259qs",
+        "nodeSpecId": "input_image",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 240,
+          "previewX": 272,
+          "previewY": 16,
+          "previewWidth": 448,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 336,
+          "posY": 0,
+          "width": 176,
+          "height": 180,
+          "selected": false
+        },
+        "propValues": {
+          "urls": [
+            "https://raw.githubusercontent.com/evilspyboy/VisualBlocksDemo-Pockety/main/blob-688eb84b-2a6c-4529-a84e-a8af319eba9d.png"
+          ],
+          "gridColumnCount": 3,
+          "allowUserUpload": true,
+          "selectedImageUrl": "https://raw.githubusercontent.com/evilspyboy/VisualBlocksDemo-Pockety/main/blob-688eb84b-2a6c-4529-a84e-a8af319eba9d.png",
+          "hidePreview": true
+        }
+      },
+      {
+        "id": "face_landmark_8hlkmc",
+        "nodeSpecId": "face_landmark",
+        "customData": {
+          "previewX": 1072,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 336,
+          "posY": 252,
+          "width": 176,
+          "height": 141,
+          "selected": false
+        },
+        "inputValues": {
+          "staticImage": true
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "live_camera_hm8h6r",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "virtual_sticker_vfde05",
+        "nodeSpecId": "virtual_sticker",
+        "customData": {
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 928,
+          "previewHeight": 768
+        },
+        "uiData": {
+          "posX": 672,
+          "posY": 88.5,
+          "width": 176,
+          "height": 255,
+          "selected": true
+        },
+        "propValues": {
+          "anchor": "faceTop",
+          "scale": 2.71,
+          "offsetX": 30,
+          "offsetY": 50,
+          "hidePreview": false
+        },
+        "incomingEdges": {
+          "landmarkResult": [
+            {
+              "sourceNodeId": "face_landmark_8hlkmc",
+              "outputId": "landmarkResult"
+            }
+          ],
+          "stickerImage": [
+            {
+              "sourceNodeId": "input_image_6259qs",
+              "outputId": "image"
+            }
+          ],
+          "originalImage": [
+            {
+              "sourceNodeId": "live_camera_hm8h6r",
+              "outputId": "image"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "customNodeUrls": []
+}
